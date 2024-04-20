@@ -1,11 +1,15 @@
-const mobileNav = document.querySelector(".hamburger");
-const navbar = document.querySelector(".menubar");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-const toggleNav = () => {
-  navbar.classList.toggle("active");
-  mobileNav.classList.toggle("hamburger-active");
-};
-mobileNav.addEventListener("click", () => toggleNav());
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+})
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}))
 
 const tiles = [
     '/assets/images/image1.png','/assets/images/image2.png','/assets/images/image3.png','/assets/images/image4.png','/assets/images/image5.png',
