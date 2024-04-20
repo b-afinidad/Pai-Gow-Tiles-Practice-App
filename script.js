@@ -35,6 +35,13 @@ const tiles = [
     'assets/image21.png'
 ];
 
+const imageCache = {};
+tiles.forEach((url) => {
+    const img = new Image();
+    img.src = url;
+    imageCache[url] = img;
+});
+
 function getRandomTiles(){
     const indices = getRandomIndices(2, tiles.length);
     
