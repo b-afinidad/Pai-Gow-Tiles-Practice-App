@@ -59,5 +59,3 @@ function getRandomIndices(n, maxIndex){
     }
     return Array.from(indices);
 }
-
-document.querySelector('.tilescontainer').addEventListener("click", getRandomTiles);
