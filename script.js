@@ -12,11 +12,28 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
 }))
 
 const tiles = [
-    '/assets/images/image1.png','/assets/images/image2.png','/assets/images/image3.png','/assets/images/image4.png','/assets/images/image5.png',
-    '/assets/images/image6.png','/assets/images/image7.png','/assets/images/image8.png','/assets/images/image9.png','/assets/images/image10.png',
-    '/assets/images/image12.png','/assets/images/image13.png','/assets/images/image14.png','/assets/images/image15.png','/assets/images/image16.png',
-    '/assets/images/image17.png','/assets/images/image18.png','/assets/images/image19.png','/assets/images/image20.png','/assets/images/image21.png',
-]
+    'assets/image1.png',
+    'assets/image2.png',
+    'assets/image3.png',
+    'assets/image4.png',
+    'assets/image5.png',
+    'assets/image6.png',
+    'assets/image7.png',
+    'assets/image8.png',
+    'assets/image9.png',
+    'assets/image10.png',
+    'assets/image11.png',
+    'assets/image12.png',
+    'assets/image13.png',
+    'assets/image14.png',
+    'assets/image15.png',
+    'assets/image16.png',
+    'assets/image17.png',
+    'assets/image18.png',
+    'assets/image19.png',
+    'assets/image20.png',
+    'assets/image21.png'
+];
 
 function getRandomTiles(){
     const indices = getRandomIndices(2, tiles.length);
