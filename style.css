@@ -136,3 +136,9 @@ nav ul li a:hover {
     height: auto; /* Maintain aspect ratio */
     width: 50vw; /* Set width to 50% of viewport width */
 }
+
+.image {
+    border: 100px;
+    display: flex;
+    padding-top: 50px;
+}
