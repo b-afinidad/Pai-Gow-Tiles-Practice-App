@@ -61,16 +61,3 @@ function getRandomIndices(n, maxIndex){
 }
 
 document.querySelector('.tilescontainer').addEventListener("click", getRandomTiles);
-// document.addEventListener('DOMContentLoaded', function() {
-//     document.body.addEventListener('click', function(event) {
-//         if (!event.target.closest('nav')) {
-//             getRandomTiles();
-//         }
-//     });
-
-//     document.querySelector('.tilescontainer').addEventListener('click', function(event) {
-//         getRandomTiles();
-//         // Stop the click event from propagating to the body, so it won't trigger getRandomTiles() twice
-//         event.stopPropagation();
-//     });
-// });
