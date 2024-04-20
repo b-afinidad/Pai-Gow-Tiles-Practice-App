@@ -87,7 +87,6 @@ nav ul li a:hover {
     background-color: white;
 }
 
-
 #tile1 {
     width: auto;
     height: 250px;
@@ -115,8 +114,8 @@ nav ul li a:hover {
     width: 50vw; /* Set width to 50% of viewport width */
 }
 
-.image {
+/* .image {
     border: 100px;
     display: flex;
     padding-top: 50px;
-}
+} */
