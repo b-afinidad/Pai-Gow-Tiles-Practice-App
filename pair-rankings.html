@@ -5,35 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PaiGow Tiles</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        .box{
+            display: inline-grid;
+            border: 2px solid;
+            pointer-events: none;
+        }
+        .box *{
+            pointer-events: initial;
+        }
+        .a{
+            grid-area: 1/1;
+            width: 0%;
+            background: red;
+            transition: 0s .2s;
+        }
+        .box:active .a{
+            width: 100%;
+            transition: 0s;
+        }
+        img{
+            grid-area: 1/1;
+            transform: translate(200%);
+            transition: 999s 999s;
+        }
+        .a:hover + img{
+            transform: translate(0);
+            transition: 0s;
+        }
+
+        .drop-zone {
+            border: 2px dashed gray;
+            height: 100px; /* Adjust as needed */
+            margin-bottom: 10px;
+        }
+
+    </style>
 </head>
 <body>
-
-    <header>
-        <nav class="navbar">
-            <div class="logo"><h1><a href="index.html">Pai Gow Tiles Practice</a></h1></div>
-                <ul class="nav-menu">
-                    <!-- <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li> -->
-                    <li class="nav-item"><a href="pair-rankings.html" class="nav-link">Pair Rankings</a></li>
-                    <li class="nav-item"><a href="https://gaming.knighted.com/" class="nav-link">Practice Portal</a></li>
-                </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav> 
-    </header>
-
     <main>
-        <div class="tilescontainer">
-            <img src="./assets/PaiGowTiles - Pair Rankings.png" alt="Pair Rankings" style="width:100%" class="image">
-        </div>
+        
+        <div class="drop-zone" id="drop-zone-1"></div>
+        <div class="drop-zone" id="drop-zone-2"></div>
+
+        <div class="box" draggable="true"><div class="a"></div><img src="./assets/image16.png" width="50" class="image"></div>
+
+        <!-- <div class="box"><div class="a"></div><img src="./assets/teen.png" width="50"class="image"></div>
+        <div class="box"><div class="a"></div><img src="./assets/teen.png" width="50"class="image"></div>
+
+        <div class="box"><div class="a"></div><img src="./assets/dey.png" width="50"class="image"></div>
+        <div class="box"><div class="a"></div><img src="./assets/dey.png" width="50"class="image"> </div>
+        
+        <div class="box"><div class="a"></div><img src="./assets/h8.png" width="50"class="image"></div>
+        <div class="box"><div class="a"></div><img src="./assets/h8.png" width="50"class="image"></div>
+        <div class="box"><div class="a"></div><img src="./assets/h4.png" width="50"class="image"></div>
+        <div class="box"><div class="a"></div><img src="./assets/h4.png" width="50"class="image"></div> -->
+
+        <script>
+            const dropZones = document.querySelectorAll('.drop-zone');
+            const boxes = document.querySelectorAll('.box');
+        
+            let draggedItem = null;
+        
+            // Drag start event listener
+            boxes.forEach(box => {
+                box.addEventListener('dragstart', () => {
+                    draggedItem = box;
+                    setTimeout(() => {
+                        box.style.display = 'none'; // Hide the dragged item visually
+                    }, 0);
+                });
+        
+                box.addEventListener('dragend', () => {
+                    setTimeout(() => {
+                        draggedItem.style.display = 'inline-grid'; // Show the dragged item
+                        draggedItem = null;
+                    }, 0);
+                });
+            });
+        
+            // Drag over event listener
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', e => {
+                    e.preventDefault();
+                });
+        
+                zone.addEventListener('drop', e => {
+                    e.preventDefault();
+                    if (draggedItem) {
+                        zone.appendChild(draggedItem);
+                    }
+                });
+            });
+        </script>
+
     </main>
     
-    <footer>
+
+    <!-- <footer>
         <script src="script.js"></script>
-    </footer>
+    </footer> -->
 
 </body>
 </html>
